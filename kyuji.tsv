@@ -921,7 +921,7 @@ shinji	kyuji	inherited
 # *¹ Overlapping characters. These characters with different meaning and usage were merged into one and thus cannot be accurately reverted back to their original forms. 予余台弁欠缶芸.		
 # *² Novel simplification pattern introduced by the 表外漢字字体表. These characters (曻𱀧) are not mentionned but follow the same simplification patterns. 桝沪曻𱀧.		
 # *³ 表外漢字だけに適用されるデザイン差. These are considered as design variations by the 表外漢字字体表 (not 新字). In reality any kanji dictionary will tell you that the relation is not a design variation but rather a 俗字. These characters (荆靭頹臈) are considered as design variations but the relation is actually the opposite thus the relation has been fixed. These characters (仭刄劔釼㫖秃𮋝𮌖册删姗) are not mentionned but have been extrapolated based on the variation patterns. 叱呑荆靭頹臈𥡴栅仭刄劔釼㫖秃𮋝𮌖册删姗.		
-# *⁴ 人名用漢字. Depending on the source, 新字 forms that are 人名用漢字 are either consider as the de-facto standard (even though the scope of the 人名用漢字表 is strictly names) with the 旧字 listed as 旧字/異体字 or the opposite, the 旧字 form will be properly recorded as the main form with the 新字 being a 俗字. Of course, this ambiguity is only present in post-kanji reform sources. Two new simplification method not seen in the 常用漢字 are introduced (兎晋).		
+# *⁴ 人名用漢字. Depending on the source, 新字 forms that are 人名用漢字 are either consider as the de-facto standard (even though the scope of the 人名用漢字表 is strictly names) with the 旧字 listed as 旧字/異体字 or the opposite, the 旧字 form will be properly recorded as the main form with the 新字 being a 俗字. Of course, this ambiguity is only present in post-kanji reform sources. Two new simplification method not seen in the 常用漢字 are introduced (兎晋). These 人名用漢字 (亘凛桧熙祢祷) are not directly stated as being 新字 by most sources but follow the same simplification patterns. In addition, these simplified forms (芦祷) are both 人名用漢字 and 簡易慣用字体.		
 # Non-destructive overlapping characters. These characters were also merged into one but do not have any recorded use within words and thus can be replaced without issue. 万体党医担浜灯糸胆虫蚕豊岳証亘.		
 # These 旧字 are etymologically incorrect or have an irregular shape, refer to the adjacent column for the correct character. See I.Font Project's Inherited Glyph Standardization Documents. 竝倂敍甁餠暜𧭘屛幷俱腁逬騈斅敺.		
 # Unsimplified 常用漢字. In addition to pre-existing inconsistencies, the 2010 常用漢字表 revision's additional characters largely adopted 旧字 forms instead of 新字. This means that the potential 新字 is thus a 拡張新字体. 剝塡籠頰虎卒箋脇濁協毀彙喩懸璽.		
@@ -946,5 +946,4 @@ shinji	kyuji	inherited
 # 隷, the only source not citing 隸 as the 旧字 is the 字通 that rather cites 隸 as a 異体字. Once again pre-war sources are unanimous as to 隸 being the correct form.		
 # 餅, only the 新字源 considers the 旧字 餠 as being a 本字. Which is odd because all other instances of characters containing 𩙿/幷 are properly recorded as 旧字 by the same dictionary.		
 # 拝, the 旧字体 (拜) is somewhat irregular as the shape of the 扌 changes for aesthetical reasons .		
-# 芦祷, these simplified forms are both 人名用漢字 and 簡易慣用字体.
-# 亘凛桧熙祢祷, these 人名用漢字 are not directly stated as being 新字 by most sources but follow the same simplification patterns.
+
