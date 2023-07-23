@@ -926,6 +926,7 @@ shinji	kyuji	inherited
 # These 旧字 are etymologically incorrect or have an irregular shape, refer to the adjacent column for the correct character. See I.Font Project's Inherited Glyph Standardization Documents. 竝倂敍甁餠暜𧭘屛幷俱腁逬騈斅敺.		
 # Unsimplified 常用漢字. In addition to pre-existing inconsistencies, the 2010 常用漢字表 revision's additional characters largely adopted 旧字 forms instead of 新字. This means that the potential 新字 is thus a 拡張新字体. 剝塡籠頰虎卒箋脇濁協毀彙喩懸璽.		
 # Unsimplified 人名用漢字. The 人名用漢字表 contains the 旧字 without adopting the corresponding 新字 as well. For these characters (繡蔣蠟醬鷗) the 新字 is part of the 簡易慣用字体. 繡蔣蠟醬鷗俠俱摑焰簞繫萊蟬顚爾廳淵稟翠轟篠徠勁犀秦傳寵驍.		
+# The 新字 is the 印刷標準字体. For some reason the standard form given by the 表外漢字字体表 is a 新字. In the case of 刹栃 it is understandable as 刹 has been used long before the 常用 reform as standard and 栃 is a 国字. But in the case of the other characters it is a bit puzzling. 刹栃餅兎厨厩讃澗
 # These characters are 国字 and thus cannot strictly be considered as a 拡張新字体. However they use a simplified shape as one of their components and thus have been included. In once instance the corresponding 旧字 is an already existing character with a different meaning (枠) thus causing a merge. 枠栃䋆蟵.		
 # Characters like 刑 and 邢 are not written originally as 幵 because they are derived from 井 and not from 干+干.		
 # 並, the 旧字 is widely documented as being 竝 but it is in fact a 本字. All other characters containing the 竝 component are documented as being 本字 and not 旧字. 普/譜 have been forcefully added to the document for consistency.		
