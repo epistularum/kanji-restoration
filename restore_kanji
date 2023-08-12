@@ -1,0 +1,51 @@
+#!/usr/bin/python
+
+import sys
+import csv
+
+replacements_file = "/home/ronnie/.local/bin/kyuji.tsv"
+
+def load_replacements(file_path):
+    replacements = {}
+    with open(file_path, "r", encoding="utf-8") as f:
+        tsv_reader = csv.reader(f, delimiter="\t")
+        for row in tsv_reader:
+            if len(row) >= 2:
+                old_char, new_char = row[0], row[1]
+                replacements[old_char.encode('utf-8')] = new_char.encode('utf-8')
+    return replacements
+
+def apply_replacements(byte_data, replacements):
+    modified_byte_data = bytearray()
+    i = 0
+    while i < len(byte_data):
+        char_byte = byte_data[i:i+3]
+        replacement = replacements.get(char_byte)
+        if replacement:
+            modified_byte_data += replacement
+        else:
+            try:
+                # Convert to Unicode if replacement not found
+                char_unicode = char_byte.decode('utf-8', errors='strict')
+                modified_byte_data += char_unicode.encode('utf-8')
+            except UnicodeDecodeError:
+                # Handle decode errors by skipping invalid bytes
+                i += 1
+                continue
+        i += 3
+    return modified_byte_data
+
+if __name__ == "__main__":
+    replacements = load_replacements(replacements_file)
+
+    if len(sys.argv) > 1:
+        # Combine command-line arguments into a single string
+        input_text = " ".join(sys.argv[1:])
+        input_bytes = input_text.encode('utf-8')
+    else:
+        # Read input from standard input
+        input_bytes = sys.stdin.buffer.read()
+
+    modified_bytes = apply_replacements(input_bytes, replacements)
+
+    sys.stdout.buffer.write(modified_bytes)
