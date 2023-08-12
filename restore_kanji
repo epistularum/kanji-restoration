@@ -3,6 +3,7 @@
 import sys
 import csv
 import subprocess
+import tempfile
 
 
 replacements_file = "/home/ronnie/.local/bin/kyuji.tsv"
@@ -53,11 +54,19 @@ if __name__ == "__main__":
     # Print the modified output
     sys.stdout.buffer.write(modified_bytes)
 
-    # Send the modified output to clipboard using xclip
-    xclip_command = ["xclip", "-selection", "clipboard"]
+    # Save the modified output to a temporary file
+    with tempfile.NamedTemporaryFile(delete=False) as temp_file:
+        temp_file.write(modified_bytes)
+
+    # Copy the temporary file's contents to the clipboard using xclip
+    xclip_command = ["xclip", "-selection", "clipboard", "-i", temp_file.name]
     
-    # Use subprocess to run the command and send the modified output to xclip
+    # Use subprocess to run the command and copy the temporary file's contents to clipboard
     try:
-        subprocess.run(xclip_command, input=modified_bytes, check=True)
+        subprocess.run(xclip_command, check=True)
+    #    print("Modified output copied to clipboard.")
     except subprocess.CalledProcessError:
-        print("Failed to send to clipboard using xclip")
+        print("Failed to copy to clipboard using xclip")
+
+    # Delete the temporary file
+    temp_file.close()
