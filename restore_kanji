@@ -2,6 +2,8 @@
 
 import sys
 import csv
+import subprocess
+
 
 replacements_file = "/home/ronnie/.local/bin/kyuji.tsv"
 
@@ -48,4 +50,14 @@ if __name__ == "__main__":
 
     modified_bytes = apply_replacements(input_bytes, replacements)
 
+    # Print the modified output
     sys.stdout.buffer.write(modified_bytes)
+
+    # Send the modified output to clipboard using xclip
+    xclip_command = ["xclip", "-selection", "clipboard"]
+    
+    # Use subprocess to run the command and send the modified output to xclip
+    try:
+        subprocess.run(xclip_command, input=modified_bytes, check=True)
+    except subprocess.CalledProcessError:
+        print("Failed to send to clipboard using xclip")
