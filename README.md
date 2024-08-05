@@ -1,2 +1,60 @@
-# kanji-restoration
-Collection of data needed for an etymologically correct restoration of kanji.
+This project aims to rectify the consequences of the 新字 simplification by restoring a correct usage of kanji based on linguistic accuracy as seen in late Ming to Qing dynasty dictionaries while placing particular emphasis on the Japanese language and contemporary usage, when justified.
+
+## Sources 
+Reference:
+- 大漢和辞典 - (1960 / ~50,000 kanji / **~530,000 words**)
+authoritative kanji dictionary for the Japanese language 
+- 漢語大字典［第二版］ - (1989 / ~60,000 kanji)
+most authoritative hanzi dictionary
+- 教育部異體字字典［第七版］ - (2000 / ~106,000 kanji)
+Taiwan's official variant character dictionary
+
+Primary:
+- 中華大字典 - (1915 / ~48,000 kanji)
+aims to be a revision of the 康熙字典
+- 康熙字典 - (1716 / ~47,000 kanji)
+largely based on 正字通
+- 正字通 - (1627 / ~33,000 kanji)
+aims to be a revision of the 字彙
+- 字彙 - (1615 / ~33,000 kanji)
+first significant advancement in kanji dictionaries after centuries of linguistic stagnation from the sixth to seventeenth centuries
+
+Contemporary (chinese):
+- 漢語大詞典［第一版］ - (1994 / ~23,000 kanji / **~370,000 words**)
+most authoritative word dictionary
+- 教育部國語辭典［第五版］ - (1994 / ~11,000 kanji / **~152,000 words**)
+Taiwan's official word dictionary
+
+Contemporary (Japanese):
+- 新字源［改訂新版］ - (2017 / ~13,500 kanji / **~105,000 words**)
+- 新漢語林［第二版］ - (2011 / ~14,629 kanji / **~50,000 words**)
+- 漢字源［改訂第五版］ - (2010 / ~13,285 kanji / **~88,000 words**)
+- 全訳 漢辞海［第四版］ - (2016 / ~12,500 kanji / **~80,000 words**)
+- 漢検漢字辞典［第二版］ - (2014 / ~6,300 kanji / **~42,000 words**)
+- 字通 - (1996 / ~10,000 kanji / **~220,000 words**)
+- 大辞林［第四版］ - (2019 / **~251,000 words**)
+- 広辞苑［第七版］ - (2018 / **~250,000 words**)
+- 日本国語大辞典［第二版］ - (2003 / **500,000 words**)
+
+Historical:
+- 説文解字 - (121 / ~10,000 kanji)
+first proper hanzi dictionary
+
+## 正字 criteria
+The selection is done by comparing the reference material from Japan (大漢和辞典), China (漢語大字典) and Taiwan (教育部異體字字典). If a majority consensus cannot be achieved or the selected form breaks the 六書 formation (e.g. 脆脃) then the primary sources are referenced as well.
+
+Since the focus of the project is around the Japanese language, modern Japanese sources are taken into account. Characters that have developed a new/specialized meaning (e.g. 吊弔, 咲笑), characters that are just a re-arrangement of components (e.g. 羣群, 蟆蟇) or characters that overlap with another currently used character with a different meaning (e.g. 芸藝, 余餘) are kept. Characters considered 俗字/新字 or characters that overlap with another character that has a different meaning but is not in use (e.g. 痺痹, 唇脣) are replaced.
+
+In order to guarantee the correct shape of glyphs, characters not conforming to I.Font Project's Inherited Glyphs standard are replaced accordingly (e.g. 研硏, 屛屏, 俱倶).
+
+## Files
+- seiji.tsv
+table of JIS X 0213 characters with their corresponding 正字 (currently only covers 第1水準漢字, 第2水準漢字 and all characters of the 漢検漢字辞典［第二版］)
+- I.MingSeiji.ttf
+[I.Font Project](https://github.com/ichitenfont/inheritedglyphs/blob/master/Readme_eng.md)'s [I.Ming font](https://github.com/ichitenfont/I.Ming) but modified so that only 正字 can be displayed. The purpose of the I.Ming font is to display only correct character **shapes** (傳承字形) for etymological and historical accuracy. For some forms the more correct but more archaic alternate form has been used instead (based on I.Ming Project's Inherited Glyph Standardization Document). See /source/font.
+- source/standards
+variety of kanji/hanzi lists ranging from government standards to kanji aptitude tests
+- source/itaiji
+variety of 異体字 tables
+- source/font
+files/documents needed to replicate I.MingSeiji.ttf
