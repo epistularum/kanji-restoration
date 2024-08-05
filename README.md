@@ -45,7 +45,7 @@ The selection is done by comparing the reference material from Japan (大漢和�
 
 Since the focus of the project is around the Japanese language, modern Japanese sources are taken into account. Characters that have developed a new/specialized meaning (e.g. 吊弔, 咲笑), characters that are just a re-arrangement of components (e.g. 羣群, 蟆蟇) or characters that overlap with another currently used character with a different meaning (e.g. 芸藝, 余餘) are kept. Characters considered 俗字/新字 or characters that overlap with another character that has a different meaning but is not in use (e.g. 痺痹, 唇脣) are replaced.
 
-In order to guarantee the correct shape of glyphs, characters not conforming to I.Font Project's Inherited Glyphs standard are replaced accordingly (e.g. 研硏, 屛屏, 俱倶).
+In order to guarantee the correct shape of glyphs, characters not conforming to [I.Font Project's Inherited Glyphs standard](https://github.com/ichitenfont/inheritedglyphs/blob/master/Readme_eng.md) are replaced accordingly (e.g. 研硏, 屛屏, 俱倶).
 
 ## Files
 - seiji.tsv
