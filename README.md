@@ -1,5 +1,8 @@
 This project aims to rectify the consequences of the 新字 simplification by restoring a correct usage of kanji based on linguistic accuracy as seen in late Ming to Qing dynasty dictionaries while placing particular emphasis on the Japanese language and contemporary usage, when justified.
 
+Example font rendering displaying the correct forms of characters even when the underlying text is in 新字体:
+![image](https://github.com/user-attachments/assets/1f2e7ba7-4b37-4cea-8522-3ab0e5ec8b36)
+
 ## Sources 
 Reference:
 - 大漢和辞典 - (1960 / ~50,000 kanji / **~530,000 words**)
