@@ -1,5 +1,8 @@
 This project aims to rectify the consequences of the 新字 simplification by restoring a correct usage of kanji based on linguistic accuracy as seen in late Ming to Qing dynasty dictionaries while placing particular emphasis on the Japanese language and contemporary usage, when justified.
 
+To quote [白川静](https://ja.wikipedia.org/wiki/%E7%99%BD%E5%B7%9D%E9%9D%99):
+> 政府の「当用漢字表」の告示から五十余年を経た今では、その結果はまことに明らかである。古典は軽視され、文化の伝統の上にも大きな障害があらわれてきている。殊にわが国のように、歴史も古く、多くのすぐれた古典を持つ民族にとって、その理解が失われ、受容の機会が狭められているということは、わが国の文化の継承の上からも、容易ならぬ事態というべきであろう。敗戦後間もないころ、わが国を占領した連合軍が、その統治上の便宜ということもあって、漢字の制限・廃止を日本政府に求めてきたのに端を発するものであった。いわば占領政策上の便宜からの要求であり、そこには何らかの文化的考慮をも含むものではなかった。
+
 Example font rendering displaying the correct forms of characters even when the underlying text is in 新字体:
 ![image](https://github.com/user-attachments/assets/1f2e7ba7-4b37-4cea-8522-3ab0e5ec8b36)
 
