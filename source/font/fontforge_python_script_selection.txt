@@ -1,2 +1,0 @@
-# little script to select a list of unicode points
-fontforge.activeFont().selection.select(("unicode", None), "u+268F4", "u+268F9", "u+268D0")

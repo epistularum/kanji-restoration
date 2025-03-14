@@ -1,0 +1,131 @@
+\documentclass[a3paper, landscape]{article}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows}
+\usepackage{amsmath}
+\usepackage[showframe, margin=0in]{geometry}
+\usepackage{graphicx}
+\usepackage{luatexja}
+
+% Scale factor calculation based on the page size
+\newlength{\tikzwidth}
+\newlength{\tikzheight}
+\setlength{\tikzwidth}{\paperwidth}  % Width of the page
+\setlength{\tikzheight}{\paperheight} % Height of the page
+
+\tikzstyle{regular} = [rectangle, rounded corners,
+minimum width=3cm,
+minimum height=1cm,
+text centered,
+draw=black, ]
+
+\tikzstyle{replace} = [rectangle, rounded corners,
+minimum width=3cm,
+minimum height=1cm,
+text centered,
+draw=black,
+fill=red!30]
+
+\tikzstyle{keep} = [rectangle, rounded corners,
+minimum width=3cm,
+minimum height=1cm,
+text centered,
+draw=black,
+fill=green!30]
+
+\tikzstyle{io} = [trapezium,
+trapezium stretches=true, % A later addition
+trapezium left angle=70,
+trapezium right angle=110,
+minimum width=3cm,
+minimum height=1cm, text centered,
+draw=black, fill=blue!30]
+
+\tikzstyle{process} = [rectangle,
+minimum width=3cm,
+minimum height=1cm,
+text centered,
+text width=3cm,
+draw=black,
+fill=darkgray!30]
+
+\tikzstyle{decision} = [diamond,
+minimum width=3cm,
+minimum height=1cm,
+text centered,
+draw=black,
+fill=green!30]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+\begin{document}
+
+\begin{figure}[t]
+
+\begin{tikzpicture}[node distance=2cm, scale=\textwidth/\tikzwidth]
+
+\node (ps) [process] {reference source};
+\node (ss_zokuji) [regular, above of=ps] {俗字/誤字/訛字};
+\node (breaks_rikusho) [regular, left of=ss_zokuji, xshift=-2cm] {breaks 六書};
+\node (stop_rikusho) [replace, left of=breaks_rikusho, xshift=-2cm] {replace};
+\node (keep_rikusho) [keep, below of=breaks_rikusho] {keep};
+
+
+\node (ss_shinji) [regular, above of=ss_zokuji] {新字};
+\node (modern_overlapping) [regular, left of=ss_shinji, xshift=-2cm] {considerable overlapping};
+\node (overlapping_replace) [replace, left of=modern_overlapping, xshift=-2cm] {replace};
+\node (overlapping_keep) [keep, above of=modern_overlapping] {keep};
+
+\node (modern_misuse) [regular, above of=ss_shinji] {misuse};
+\node (iming) [regular, above of=modern_misuse] {follows i.ming};
+\node (iming_keep) [keep, left of=iming, xshift=-2cm] {keep};
+\node (iming_replace) [replace, above of=iming] {replace};
+
+\node (misuse_overlapping) [regular, right of=modern_misuse, xshift=2cm] {considerable overlapping};
+\node (replace_overlapping) [replace, right of=misuse_overlapping, xshift=2cm] {replace};
+\node (keep_overlapping) [keep, above of=misuse_overlapping] {keep};
+
+
+
+\node (japanese_novel) [regular, below of=ps] {novel meaning};
+\node (keep_novel) [keep, right of=japanese_novel, xshift=2cm] {keep};
+\node (seiji) [regular, below of=japanese_novel] {正字};
+\node (repairs_rikusho) [regular, right of=seiji, xshift=2cm] {repairs 六書};
+\node (keep_repairs_rikusho) [keep, below of=repairs_rikusho] {keep};
+\node (replace_repairs_rikusho) [replace, right of=repairs_rikusho, xshift=2cm] {replace};
+\node (separate_entry) [regular, below of=seiji] {separate 親字};
+\node (separate_break_rikusho) [regular, left of=separate_entry, xshift=-2cm] {breaks 六書};
+\node (keep_separate_rikusho) [keep, below of=separate_break_rikusho] {keep};
+\node (replace_separate_rikusho) [replace, left of=separate_break_rikusho, xshift=-2cm] {replace};
+\node (replace_separate_entry) [replace, below of=separate_entry] {replace};
+
+
+\draw [arrow] (ps) -- node[anchor=east] {keep} (ss_zokuji);
+\draw [arrow] (ss_zokuji) -- node[anchor=south] {yes} (breaks_rikusho);
+\draw [arrow] (ss_zokuji) -- node[anchor=east] {no} (ss_shinji);
+\draw [arrow] (ss_shinji) -- node[anchor=south] {yes} (modern_overlapping);
+\draw [arrow] (ss_shinji) -- node[anchor=east] {no} (modern_misuse);
+\draw [arrow] (modern_misuse) -- node[anchor=east] {no} (iming);
+\draw [arrow] (breaks_rikusho) -- node[anchor=south] {yes} (stop_rikusho);
+\draw [arrow] (breaks_rikusho) -- node[anchor=east] {no} (keep_rikusho);
+\draw [arrow] (modern_overlapping) -- node[anchor=east] {yes} (overlapping_keep);
+\draw [arrow] (modern_overlapping) -- node[anchor=south] {no} (overlapping_replace);
+\draw [arrow] (modern_misuse) -- node[anchor=south] {yes} (misuse_overlapping);
+\draw [arrow] (misuse_overlapping) -- node[anchor=east] {yes} (keep_overlapping);
+\draw [arrow] (misuse_overlapping) -- node[anchor=south] {no} (replace_overlapping);
+\draw [arrow] (iming) -- node[anchor=east] {no} (iming_replace);
+\draw [arrow] (iming) -- node[anchor=south] {yes} (iming_keep);
+\draw [arrow] (ps) -- node[anchor=east] {replace} (japanese_novel);
+\draw [arrow] (japanese_novel) -- node[anchor=south] {yes} (keep_novel);
+\draw [arrow] (japanese_novel) -- node[anchor=east] {no} (seiji);
+\draw [arrow] (seiji) -- node[anchor=south] {yes} (repairs_rikusho);
+\draw [arrow] (repairs_rikusho) -- node[anchor=east] {yes} (keep_repairs_rikusho);
+\draw [arrow] (repairs_rikusho) -- node[anchor=south] {no} (replace_repairs_rikusho);
+\draw [arrow] (seiji) -- node[anchor=east] {no} (separate_entry);
+\draw [arrow] (separate_entry) -- node[anchor=south] {yes} (separate_break_rikusho);
+\draw [arrow] (separate_break_rikusho) -- node[anchor=east] {no} (keep_separate_rikusho);
+\draw [arrow] (separate_break_rikusho) -- node[anchor=south] {yes} (replace_separate_rikusho);
+\draw [arrow] (separate_entry) -- node[anchor=east] {no} (replace_separate_entry);
+\end{tikzpicture}
+\centering
+
+\end{figure}
+
+\end{document}

@@ -1,0 +1,9 @@
+# little script to select a list of unicode points
+fontforge.activeFont().selection.select(("unicode", None), "u+268F4", "u+268F9", "u+268D0")
+
+
+# script to copy a glyph in place of another one
+fontforge.activeFont().selection.select(("unicode", None), "u+842C")
+fontforge.activeFont().copy()
+fontforge.activeFont().selection.select(("unicode", None), "u+4e07")
+fontforge.activeFont().paste()

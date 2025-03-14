@@ -1,7 +1,17 @@
 This project aims to rectify the consequences of the 新字 simplification by restoring a correct usage of kanji based on linguistic accuracy as seen in late Ming to Qing dynasty dictionaries while placing particular emphasis on the Japanese language and contemporary usage, when justified.
 
-Example font rendering displaying the correct forms of characters even when the underlying text is in 新字体:
+To quote [白川静](https://ja.wikipedia.org/wiki/%E7%99%BD%E5%B7%9D%E9%9D%99):
+> 政府の「当用漢字表」の告示から五十余年を経た今では、その結果はまことに明らかである。古典は軽視され、文化の伝統の上にも大きな障害があらわれてきている。殊にわが国のように、歴史も古く、多くのすぐれた古典を持つ民族にとって、その理解が失われ、受容の機会が狭められているということは、わが国の文化の継承の上からも、容易ならぬ事態というべきであろう。敗戦後間もないころ、わが国を占領した連合軍が、その統治上の便宜ということもあって、漢字の制限・廃止を日本政府に求めてきたのに端を発するものであった。いわば占領政策上の便宜からの要求であり、そこには何らかの文化的考慮をも含むものではなかった。
+
+## Advantages
+Forces rendering of the 正字 even when writing in 新字体:
 ![image](https://github.com/user-attachments/assets/1f2e7ba7-4b37-4cea-8522-3ab0e5ec8b36)
+
+Corrects various design inconsistencies and irregularities:
+
+Forces rendering of the 正字 even when the character is a 俗字:
+
+Properly differentiates between components that look similar but are completely different: 
 
 ## Sources 
 Reference:
@@ -38,6 +48,7 @@ Contemporary (Japanese):
 - 大辞林［第四版］ - (2019 / **~251,000 words**)
 - 広辞苑［第七版］ - (2018 / **~250,000 words**)
 - 日本国語大辞典［第二版］ - (2003 / **500,000 words**)
+- A variety of 小型国語辞典
 
 Historical:
 - 説文解字 - (121 / ~10,000 kanji)
@@ -50,14 +61,39 @@ Since the focus of the project is around the Japanese language, modern Japanese 
 
 In order to guarantee the correct shape of glyphs, characters not conforming to [I.Font Project's Inherited Glyphs standard](https://github.com/ichitenfont/inheritedglyphs/blob/master/Readme_eng.md) are replaced accordingly (e.g. 研硏, 屛屏, 俱倶).
 
+For consistency any character determined as incorrect also needs to be replaced when used as a component of another character (e.g. 𡨥寇/蔲蔻, 𢙢恐/𠋸𠌖)
+
+Please refer to the flow chart below for a more detailed graphical representation.
+
+## Scope
+Currently fully supports the proper rendering of any character in:
+
+- JIS X 0213:2004 (第一水準漢字・第二水準漢字・第三水準漢字・第四水準漢字)
+- JIS 0212:1990 (for some reason this earlier dead JIS standard contains characters not present in the later JIS X 0213:2004)
+- Adobe-Japan1-6
+- 大漢和辞典 (熟語 only)
+- 新字源［改訂新版］
+- 新漢語林［第二版］
+- 漢字源［改訂第五版］
+- 全訳 漢辞海［第四版］
+- 漢検漢字辞典［第二版］
+- 字通
+- 日本国語大辞典［第二版］(熟語 only)
+- 大辞林［第四版］(熟語 only)
+- 広辞苑［第七版］(熟語 only)
+- A variety of 小型国語辞典 (熟語 only)
+
+Resulting in a total of **17,888** characters painstakingly cross-referenced during a period of several years.
 ## Files
 - seiji.tsv
-table of JIS X 0213 characters with their corresponding 正字 (currently only covers 第1水準漢字, 第2水準漢字 and all characters of the 漢検漢字辞典［第二版］)
+list of characters with their corresponding 正字
 - I.MingSeiji.ttf
 [I.Font Project](https://github.com/ichitenfont/inheritedglyphs/blob/master/Readme_eng.md)'s [I.Ming font](https://github.com/ichitenfont/I.Ming) but modified so that only 正字 can be displayed. The purpose of the I.Ming font is to display only correct character **shapes** (傳承字形) for etymological and historical accuracy. For some forms the more correct but more archaic alternate form has been used instead (based on I.Ming Project's Inherited Glyph Standardization Document). See /source/font.
 - source/standards
 variety of kanji/hanzi lists ranging from government standards to kanji aptitude tests
 - source/itaiji
 variety of 異体字 tables
+- source/jukugo
+words extracted from a variety of 国語/漢和辞典
 - source/font
 files/documents needed to replicate I.MingSeiji.ttf
