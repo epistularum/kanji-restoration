@@ -4,6 +4,38 @@ This project aims to rectify the consequences of the 新字 simplification by re
 To quote [白川静](https://ja.wikipedia.org/wiki/%E7%99%BD%E5%B7%9D%E9%9D%99):
 > 政府の「当用漢字表」の告示から五十余年を経た今では、その結果はまことに明らかである。古典は軽視され、文化の伝統の上にも大きな障害があらわれてきている。殊にわが国のように、歴史も古く、多くのすぐれた古典を持つ民族にとって、その理解が失われ、受容の機会が狭められているということは、わが国の文化の継承の上からも、容易ならぬ事態というべきであろう。敗戦後間もないころ、わが国を占領した連合軍が、その統治上の便宜ということもあって、漢字の制限・廃止を日本政府に求めてきたのに端を発するものであった。いわば占領政策上の便宜からの要求であり、そこには何らかの文化的考慮をも含むものではなかった。
 
+## 正字 criteria
+The selection is done by comparing the reference material from Japan (大漢和辞典), China (漢語大字典) and Taiwan (教育部異體字字典). If a majority consensus cannot be achieved or the selected form breaks the 六書 formation (e.g. 脆脃) then the primary sources are referenced as well.
+
+Since the focus of the project is around the Japanese language, modern Japanese sources are taken into account. Characters that have developed a new/specialized meaning (e.g. 吊弔, 咲笑) or characters that overlap with another currently used character with a different meaning (e.g. 芸藝, 余餘) are kept. Characters considered 俗字/新字 or characters that overlap with another character that has a different meaning but is not in use (e.g. 痺痹, 唇脣) are replaced. Concerning characters that are just a re-arrangement of components (e.g. 羣群, 蟆蟇), only the modern form is kept.
+
+In order to guarantee the correct shape of glyphs, characters not conforming to [I.Font Project's Inherited Glyphs standard](https://github.com/ichitenfont/inheritedglyphs/blob/master/Readme_eng.md) are replaced accordingly (e.g. 研硏, 屛屏, 俱倶).
+
+For consistency any character determined as incorrect also needs to be replaced when used as a component of another character (e.g. 𡨥寇/蔲蔻, 𢙢恐/𠋸𠌖)
+
+Please refer to the flow chart below for a more detailed graphical representation.
+![flow_chart](https://github.com/user-attachments/assets/e7f15def-4345-432b-81b6-c8890e3c7d6d)
+
+## Scope
+Currently fully supports the proper rendering of any character in:
+
+- JIS X 0213:2004 (第一水準漢字・第二水準漢字・第三水準漢字・第四水準漢字)
+- JIS 0212:1990 (for some reason this earlier dead JIS standard contains characters not present in the later JIS X 0213:2004)
+- Adobe-Japan1-6
+- 大漢和辞典 (熟語 only)
+- 新字源［改訂新版］
+- 新漢語林［第二版］
+- 漢字源［改訂第五版］
+- 全訳 漢辞海［第四版］
+- 漢検漢字辞典［第二版］
+- 字通
+- 日本国語大辞典［第二版］(熟語 only)
+- 大辞林［第四版］(熟語 only)
+- 広辞苑［第七版］(熟語 only)
+- A variety of 小型国語辞典 (熟語 only)
+
+Resulting in a total of **17,888** characters painstakingly cross-referenced during a period of several years.
+
 ## Advantages
 Forces rendering of the 正字 even when writing in 新字体:
 ![image](https://github.com/user-attachments/assets/6d47be88-c14f-45af-b3b8-8297af0e7b1e)
@@ -16,7 +48,6 @@ Forces rendering of the 正字 even when the character is a 俗字:
 
 Properly differentiates between components that look similar but are completely different:
 ![image](https://github.com/user-attachments/assets/ca35d35b-4765-49d0-86b6-7b9c90cb7d80)
-
 
 ## Sources 
 Reference:
@@ -59,38 +90,6 @@ Historical:
 - 説文解字 - (121 / ~10,000 kanji)
 first proper hanzi dictionary
 
-## 正字 criteria
-The selection is done by comparing the reference material from Japan (大漢和辞典), China (漢語大字典) and Taiwan (教育部異體字字典). If a majority consensus cannot be achieved or the selected form breaks the 六書 formation (e.g. 脆脃) then the primary sources are referenced as well.
-
-Since the focus of the project is around the Japanese language, modern Japanese sources are taken into account. Characters that have developed a new/specialized meaning (e.g. 吊弔, 咲笑) or characters that overlap with another currently used character with a different meaning (e.g. 芸藝, 余餘) are kept. Characters considered 俗字/新字 or characters that overlap with another character that has a different meaning but is not in use (e.g. 痺痹, 唇脣) are replaced. Concerning characters that are just a re-arrangement of components (e.g. 羣群, 蟆蟇), only the modern form is kept.
-
-In order to guarantee the correct shape of glyphs, characters not conforming to [I.Font Project's Inherited Glyphs standard](https://github.com/ichitenfont/inheritedglyphs/blob/master/Readme_eng.md) are replaced accordingly (e.g. 研硏, 屛屏, 俱倶).
-
-For consistency any character determined as incorrect also needs to be replaced when used as a component of another character (e.g. 𡨥寇/蔲蔻, 𢙢恐/𠋸𠌖)
-
-Please refer to the flow chart below for a more detailed graphical representation.
-![flow_chart](https://github.com/user-attachments/assets/e7f15def-4345-432b-81b6-c8890e3c7d6d)
-
-
-## Scope
-Currently fully supports the proper rendering of any character in:
-
-- JIS X 0213:2004 (第一水準漢字・第二水準漢字・第三水準漢字・第四水準漢字)
-- JIS 0212:1990 (for some reason this earlier dead JIS standard contains characters not present in the later JIS X 0213:2004)
-- Adobe-Japan1-6
-- 大漢和辞典 (熟語 only)
-- 新字源［改訂新版］
-- 新漢語林［第二版］
-- 漢字源［改訂第五版］
-- 全訳 漢辞海［第四版］
-- 漢検漢字辞典［第二版］
-- 字通
-- 日本国語大辞典［第二版］(熟語 only)
-- 大辞林［第四版］(熟語 only)
-- 広辞苑［第七版］(熟語 only)
-- A variety of 小型国語辞典 (熟語 only)
-
-Resulting in a total of **17,888** characters painstakingly cross-referenced during a period of several years.
 ## Files
 - seiji.tsv
 list of characters with their corresponding 正字
